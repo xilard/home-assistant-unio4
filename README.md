@@ -1,6 +1,6 @@
 # Integrate input and relay module under Home Assistant
 
-This project contains 4 demo scripts to shows how to connect input and relay module to Home Assistant. It is very simple and fast preparation to work.
+This project contains 5 demo scripts to shows how to connect input and relay module to Home Assistant. It is very simple and fast preparation to work.
 
 ## Prerequisites:
 - Install add-ons in Home Assistant:
@@ -19,5 +19,8 @@ This project contains 4 demo scripts to shows how to connect input and relay mod
 ### 3. Next sample `automation-shutter` is a ***SHUTTER*** mover, this is also a timed relay solution. Room-1 and Room-2 timing is configured in the script.
 ![automation-shutter](https://github.com/xilard/home-assistant-unio4/assets/25320041/27077f0b-0a80-4105-b81b-b02c0e72256e)
 
-### 4. Last sample `automation-input-to-output` connects input to relay output. When a input is activated the relay also is became activated.
+### 4. Next sample `automation-input-to-output` connects input to relay output. When a input is activated the relay also is became activated.
 ![automation-input-to-output](https://github.com/xilard/home-assistant-unio4/assets/25320041/7e04fe22-a732-4192-a736-c8240f560486)
+
+### 5. Last sample `automation-irrigation-control` demonstrates an ***IRRIGATION control*** solution.
+![automation-irrigation-control](https://github.com/xilard/home-assistant-unio4/assets/25320041/edafe08f-08ad-4b8f-945d-0fe47480a024)
