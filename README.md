@@ -21,7 +21,7 @@ It is very simple and fast preparation to work.
 ### The `automation_input_to_relay` connects input to relay output. When a input is activated the relay also is became activated:
 ![automation-input-to-output](https://github.com/xilard/home-assistant-unio4/assets/25320041/7e04fe22-a732-4192-a736-c8240f560486)
 
-### Next sample `automation_shutter_control` is a ***SHUTTER*** mover, this is also a timed relay solution. Room-1 and Room-2 timing is configured in the script:
+### Next sample `automation_roller_shutter` is a ***ROLLER SHUTTER*** mover, this is also a timed relay solution. Room-1 and Room-2 timing is configured in the script:
 ![automation-shutter](https://github.com/xilard/home-assistant-unio4/assets/25320041/27077f0b-0a80-4105-b81b-b02c0e72256e)
 
 ### Last sample `automation_irrigation_control` demonstrates an ***IRRIGATION control*** solution:
