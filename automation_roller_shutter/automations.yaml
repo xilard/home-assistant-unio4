@@ -1,112 +1,84 @@
 
-# Start up if shutter is not active
-- alias: "Start room 1 roller shutter up if off"
+- alias: "Start room 1 roller shutter up"
+  variables:
+    is_relay_off: '{{ is_state("binary_sensor.unio_relay_1", "off") }}'
   trigger:
     - platform: state
       entity_id: input_button.relay1
-  condition: '{{ is_state("binary_sensor.unio_relay_1", "off") }}'
   action:
+    - service: mqtt.publish
+      data:
+        topic: "/control/o1"
+        payload: "0"
     - service: mqtt.publish
       data:
         topic: "/control/o2"
         payload: "0"
+    - condition: "{{ is_relay_off }}"
     - service: mqtt.publish
       data:
         topic: "/control/o1"
         payload: "5s"
 
-# Stop if shutter up is active
-- alias: "Start room 1 roller shutter up if on"
-  trigger:
-    - platform: state
-      entity_id: input_button.relay1
-  condition: '{{ is_state("binary_sensor.unio_relay_1", "on") }}'
-  action:
-    - service: mqtt.publish
-      data:
-        topic: "/control/o1"
-        payload: "0"
-
-# Start down if shutter is not active
-- alias: "Start room 1 roller shutter down if off"
+- alias: "Start room 1 roller shutter down"
+  variables:
+    is_relay_off: '{{ is_state("binary_sensor.unio_relay_2", "off") }}'
   trigger:
     - platform: state
       entity_id: input_button.relay2
-  condition: '{{ is_state("binary_sensor.unio_relay_2", "off") }}'
   action:
     - service: mqtt.publish
       data:
         topic: "/control/o1"
         payload: "0"
+    - service: mqtt.publish
+      data:
+        topic: "/control/o2"
+        payload: "0"
+    - condition: "{{ is_relay_off }}"
     - service: mqtt.publish
       data:
         topic: "/control/o2"
         payload: "5s"
 
-# Stop if shutter down is active
-- alias: "Start room 1 roller shutter down if on"
-  trigger:
-    - platform: state
-      entity_id: input_button.relay2
-  condition: '{{ is_state("binary_sensor.unio_relay_2", "on") }}'
-  action:
-    - service: mqtt.publish
-      data:
-        topic: "/control/o2"
-        payload: "0"
-
-# Start up if shutter is not active
-- alias: "Start room 2 roller shutter up if off"
+- alias: "Start room 2 roller shutter up"
+  variables:
+    is_relay_off: '{{ is_state("binary_sensor.unio_relay_3", "off") }}'
   trigger:
     - platform: state
       entity_id: input_button.relay3
-  condition: '{{ is_state("binary_sensor.unio_relay_3", "off") }}'
   action:
+    - service: mqtt.publish
+      data:
+        topic: "/control/o3"
+        payload: "0"
     - service: mqtt.publish
       data:
         topic: "/control/o4"
         payload: "0"
+    - condition: "{{ is_relay_off }}"
     - service: mqtt.publish
       data:
         topic: "/control/o3"
         payload: "8s"
 
-# Stop if shutter up is active
-- alias: "Start room 2 roller shutter up if on"
-  trigger:
-    - platform: state
-      entity_id: input_button.relay3
-  condition: '{{ is_state("binary_sensor.unio_relay_3", "on") }}'
-  action:
-    - service: mqtt.publish
-      data:
-        topic: "/control/o3"
-        payload: "0"
-
-# Start down if shutter is not active
-- alias: "Start room 2 roller shutter down if off"
+- alias: "Start room 2 roller shutter down"
+  variables:
+    is_relay_off: '{{ is_state("binary_sensor.unio_relay_4", "off") }}'
   trigger:
     - platform: state
       entity_id: input_button.relay4
-  condition: '{{ is_state("binary_sensor.unio_relay_4", "off") }}'
   action:
     - service: mqtt.publish
       data:
         topic: "/control/o3"
         payload: "0"
+    - service: mqtt.publish
+      data:
+        topic: "/control/o4"
+        payload: "0"
+    - condition: "{{ is_relay_off }}"
     - service: mqtt.publish
       data:
         topic: "/control/o4"
         payload: "8s"
-
-# Stop down if shutter down is active
-- alias: "Start room 2 roller shutter down if on"
-  trigger:
-    - platform: state
-      entity_id: input_button.relay4
-  condition: '{{ is_state("binary_sensor.unio_relay_4", "on") }}'
-  action:
-    - service: mqtt.publish
-      data:
-        topic: "/control/o4"
-        payload: "0"
