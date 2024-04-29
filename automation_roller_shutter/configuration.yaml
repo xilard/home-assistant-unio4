@@ -32,19 +32,8 @@ mqtt:
       payload_on: 1
       payload_off: 0
 
-  button:
-    - name: "shutter1 up"
-      command_topic: "/control/o1"
-      command_template: '5s'
-
-    - name: "shutter1 down"
-      command_topic: "/control/o2"
-      command_template: '5s'
-
-    - name: "shutter2 up"
-      command_topic: "/control/o3"
-      command_template: '8s'
-
-    - name: "shutter2 down"
-      command_topic: "/control/o4"
-      command_template: '8s'
+input_button:
+    relay1:
+    relay2:
+    relay3:
+    relay4:
