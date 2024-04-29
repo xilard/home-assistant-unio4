@@ -1,0 +1,40 @@
+
+- alias: "Input 1 to relay"
+  trigger:
+    - platform: mqtt
+      topic: "/states/i1"
+  action:
+    - service: mqtt.publish
+      data:
+        topic: "/control/o1"
+        payload: "{{ trigger.payload }}"
+
+- alias: "Input 2 to relay"
+  trigger:
+    - platform: mqtt
+      topic: "/states/i2"
+  action:
+    - service: mqtt.publish
+      data:
+        topic: "/control/o2"
+        payload: "{{ trigger.payload }}"
+
+- alias: "Input 3 to relay"
+  trigger:
+    - platform: mqtt
+      topic: "/states/i3"
+  action:
+    - service: mqtt.publish
+      data:
+        topic: "/control/o3"
+        payload: "{{ trigger.payload }}"
+
+- alias: "Input 4 to relay"
+  trigger:
+    - platform: mqtt
+      topic: "/states/i4"
+  action:
+    - service: mqtt.publish
+      data:
+        topic: "/control/o4"
+        payload: "{{ trigger.payload }}"

@@ -1,0 +1,36 @@
+title: Home
+views:
+  - path: default_view
+    title: Home
+    cards:
+      - type: entities
+        entities:
+          - entity: binary_sensor.unio_relay_1
+            name: Relay 1
+            state_color: true
+          - entity: binary_sensor.unio_relay_2
+            name: Relay 2
+            state_color: true
+          - entity: binary_sensor.unio_relay_3
+            name: Relay 3
+            state_color: true
+          - entity: binary_sensor.unio_relay_4
+            name: Relay 4
+            state_color: true
+        title: Relay status
+      - type: horizontal-stack
+        cards:
+          - type: entities
+            entities:
+              - entity: button.shutter1_up
+                name: Up
+              - entity: button.shutter1_down
+                name: Down
+            title: Room-1 shutter
+          - type: entities
+            entities:
+              - entity: button.shutter2_up
+                name: Up
+              - entity: button.shutter2_down
+                name: Down
+            title: Room-2 shutter

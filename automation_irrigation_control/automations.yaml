@@ -1,0 +1,29 @@
+
+- alias: "Irrigation start"
+  trigger:
+  - platform: time
+    at: input_datetime.irrigation_start_time
+  action:
+    - service: mqtt.publish
+      data:
+        topic: "/control/o1"
+        payload: "{{ states('input_number.irrigation_relay_min') | int }}m"
+    - delay:
+        minutes: "{{ states('input_number.irrigation_relay_min') | int }}"
+    - service: mqtt.publish
+      data:
+        topic: "/control/o2"
+        payload: "{{ states('input_number.irrigation_relay_min') | int }}m"
+    - delay:
+        minutes: "{{ states('input_number.irrigation_relay_min') | int }}"
+    - service: mqtt.publish
+      data:
+        topic: "/control/o3"
+        payload: "{{ states('input_number.irrigation_relay_min') | int }}m"
+    - delay:
+        minutes: "{{ states('input_number.irrigation_relay_min') | int }}"
+    - service: mqtt.publish
+      data:
+        topic: "/control/o4"
+        payload: "{{ states('input_number.irrigation_relay_min') | int }}m"
+  mode: single

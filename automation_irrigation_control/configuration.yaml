@@ -1,0 +1,46 @@
+
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+mqtt:
+  binary_sensor:
+    - name: "unio relay 1"
+      state_topic: "/states/r1"
+      payload_on: 1
+      payload_off: 0
+
+    - name: "unio relay 2"
+      state_topic: "/states/r2"
+      payload_on: 1
+      payload_off: 0
+
+    - name: "unio relay 3"
+      state_topic: "/states/r3"
+      payload_on: 1
+      payload_off: 0
+
+    - name: "unio relay 4"
+      state_topic: "/states/r4"
+      payload_on: 1
+      payload_off: 0
+
+input_number:
+  irrigation_relay_min:
+    mode: slider
+    initial: 10
+    min: 1
+    max: 20
+    step: 1
+
+input_datetime:
+  irrigation_start_time:
+    has_date: false
+    has_time: true

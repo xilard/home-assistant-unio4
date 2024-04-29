@@ -1,0 +1,33 @@
+title: Home
+views:
+  - path: default_view
+    title: Home
+    cards:
+      - type: entities
+        entities:
+          - entity: binary_sensor.unio_relay_1
+            name: Relay 1
+            state_color: true
+          - entity: binary_sensor.unio_relay_2
+            name: Relay 2
+            state_color: true
+          - entity: binary_sensor.unio_relay_3
+            name: Relay 3
+            state_color: true
+          - entity: binary_sensor.unio_relay_4
+            name: Relay 4
+            state_color: true
+        title: Relay status
+      - type: entities
+        entities:
+          - entity: input_number.timed_relay_sec
+            name: Relay activation time (sec)
+          - entity: button.unio_timed_relay_1
+            name: Start timed relay 1
+          - entity: button.unio_timed_relay_2
+            name: Start timed relay 2
+          - entity: button.unio_timed_relay_3
+            name: Start timed relay 3
+          - entity: button.unio_timed_relay_4
+            name: Start timed relay 4
+        title: Timed relays

@@ -1,0 +1,66 @@
+
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+mqtt:
+  binary_sensor:
+    - name: "unio input 1"
+      state_topic: "/states/i1"
+      payload_on: 1
+      payload_off: 0
+
+    - name: "unio input 2"
+      state_topic: "/states/i2"
+      payload_on: 1
+      payload_off: 0
+
+    - name: "unio input 3"
+      state_topic: "/states/i3"
+      payload_on: 1
+      payload_off: 0
+
+    - name: "unio input 4"
+      state_topic: "/states/i4"
+      payload_on: 1
+      payload_off: 0
+
+  switch:
+    - name: "unio relay 1"
+      command_topic: "/control/o1"
+      state_topic: "/states/r1"
+      payload_on: 1
+      payload_off: 0
+      state_on: 1
+      state_off: 0
+
+    - name: "unio relay 2"
+      command_topic: "/control/o2"
+      state_topic: "/states/r2"
+      payload_on: 1
+      payload_off: 0
+      state_on: 1
+      state_off: 0
+
+    - name: "unio relay 3"
+      command_topic: "/control/o3"
+      state_topic: "/states/r3"
+      payload_on: 1
+      payload_off: 0
+      state_on: 1
+      state_off: 0
+
+    - name: "unio relay 4"
+      command_topic: "/control/o4"
+      state_topic: "/states/r4"
+      payload_on: 1
+      payload_off: 0
+      state_on: 1
+      state_off: 0

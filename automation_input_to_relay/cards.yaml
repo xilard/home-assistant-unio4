@@ -1,0 +1,32 @@
+title: Home
+views:
+  - path: default_view
+    title: Home
+    cards:
+      - type: entities
+        entities:
+          - entity: binary_sensor.unio_input_1
+            name: Input 1
+            state_color: true
+          - entity: binary_sensor.unio_input_2
+            name: Input 2
+            state_color: true
+          - entity: binary_sensor.unio_input_3
+            name: Input 3
+            state_color: true
+          - entity: binary_sensor.unio_input_4
+            name: Input 4
+            state_color: true
+          - entity: binary_sensor.unio_relay_1
+            name: Relay 1
+            state_color: true
+          - entity: binary_sensor.unio_relay_2
+            name: Relay 2
+            state_color: true
+          - entity: binary_sensor.unio_relay_3
+            name: Relay 3
+            state_color: true
+          - entity: binary_sensor.unio_relay_4
+            name: Relay 4
+            state_color: true
+        title: Input change controls relays

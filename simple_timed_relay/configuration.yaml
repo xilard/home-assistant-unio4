@@ -1,0 +1,58 @@
+
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+mqtt:
+  binary_sensor:
+    - name: "unio relay 1"
+      state_topic: "/states/r1"
+      payload_on: 1
+      payload_off: 0
+
+    - name: "unio relay 2"
+      state_topic: "/states/r2"
+      payload_on: 1
+      payload_off: 0
+
+    - name: "unio relay 3"
+      state_topic: "/states/r3"
+      payload_on: 1
+      payload_off: 0
+
+    - name: "unio relay 4"
+      state_topic: "/states/r4"
+      payload_on: 1
+      payload_off: 0
+
+  button:
+    - name: "unio timed relay 1"
+      command_topic: "/control/o1"
+      command_template: '{{ states("input_number.timed_relay_sec") | int }}s'
+
+    - name: "unio timed relay 2"
+      command_topic: "/control/o2"
+      command_template: '{{ states("input_number.timed_relay_sec") | int }}s'
+
+    - name: "unio timed relay 3"
+      command_topic: "/control/o3"
+      command_template: '{{ states("input_number.timed_relay_sec") | int }}s'
+
+    - name: "unio timed relay 4"
+      command_topic: "/control/o4"
+      command_template: '{{ states("input_number.timed_relay_sec") | int }}s'
+
+input_number:
+  timed_relay_sec:
+    mode: slider
+    initial: 3
+    min: 1
+    max: 10
+    step: 1
